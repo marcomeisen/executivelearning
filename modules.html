@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modules Catalog | Executive Claims Technology Academy</title>
+    <meta
+      name="description"
+      content="Browse all eight executive technology modules with filtering, search, and linked learning resources."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Executive Claims Technology Academy home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Executive Claims Technology Academy</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-nav-toggle
+        >
+          Menu
+        </button>
+        <nav aria-label="Primary">
+          <ul class="nav-menu" id="site-nav" data-nav-menu>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="modules.html" aria-current="page">Modules</a></li>
+            <li><a href="pathways.html">Learning Pathways</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li>
+              <a class="cta-link" href="mailto:executive.training@claimsacademy.com?subject=Executive%20Training%20Inquiry">
+                Book Executive Session
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container page-shell">
+      <section class="page-title page-hero" data-reveal>
+        <span class="eyebrow">Module Library</span>
+        <h1>Modules Catalog</h1>
+        <p class="muted">
+          Explore eight executive-focused modules that translate technical complexity into strategic claims decisions.
+        </p>
+      </section>
+
+      <section class="section-band" aria-labelledby="catalog-title" data-reveal>
+        <h2 id="catalog-title" class="section-title">Find the Right Module</h2>
+        <div class="controls control-panel" role="search">
+          <label>
+            <span class="muted">Search modules</span><br />
+            <input
+              id="module-search"
+              type="search"
+              placeholder="Search by topic, objective, or use case"
+              aria-label="Search modules"
+            />
+          </label>
+          <label>
+            <span class="muted">Filter by track</span><br />
+            <select id="module-track" aria-label="Filter by track">
+              <option value="all">All tracks</option>
+              <option value="operations">Operations</option>
+              <option value="architecture">Architecture</option>
+              <option value="ai-data">AI & Data</option>
+              <option value="strategy">Strategy</option>
+              <option value="resilience">Resilience</option>
+              <option value="risk">Risk</option>
+              <option value="leadership">Leadership</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="grid grid-2">
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="operations"
+            data-search="module 1 claims operations technology fundamentals fnol triage digitization automation"
+          >
+            <div class="module-meta"><span class="badge">Module 1</span><span class="badge">Operations</span></div>
+            <h3>Claims Operations & Technology Fundamentals</h3>
+            <p class="muted">Clarifies where workflows should be digitized, automated, or retained as human-led decisions.</p>
+            <div class="actions"><a class="text-link" href="modules/module-1.html">Open module</a><span class="muted">Core</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="architecture"
+            data-search="module 2 claims platforms architecture APIs integration economics monolith modular"
+          >
+            <div class="module-meta"><span class="badge">Module 2</span><span class="badge">Architecture</span></div>
+            <h3>Claims Platforms & Architecture Without Technical Jargon</h3>
+            <p class="muted">Connects platform design choices to onboarding speed, partner strategy, and scaling costs.</p>
+            <div class="actions"><a class="text-link" href="modules/module-2.html">Open module</a><span class="muted">Core</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="ai-data"
+            data-search="module 3 data analytics ai claims fraud triage explainability human in loop"
+          >
+            <div class="module-meta"><span class="badge">Module 3</span><span class="badge">AI & Data</span></div>
+            <h3>Data, Analytics & AI in Claims</h3>
+            <p class="muted">Builds practical understanding of AI value, dependencies, and regulatory limitations.</p>
+            <div class="actions"><a class="text-link" href="modules/module-3.html">Open module</a><span class="muted">Advanced</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="strategy"
+            data-search="module 4 build vs buy claims platform vendor lock in total cost ownership"
+          >
+            <div class="module-meta"><span class="badge">Module 4</span><span class="badge">Strategy</span></div>
+            <h3>Build vs. Buy in Claims Platforms</h3>
+            <p class="muted">Provides a decision framework for investment choices, customization risk, and lock-in exposure.</p>
+            <div class="actions"><a class="text-link" href="modules/module-4.html">Open module</a><span class="muted">Decision Lab</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="resilience"
+            data-search="module 5 cloud scalability resilience catastrophe events observability disaster recovery"
+          >
+            <div class="module-meta"><span class="badge">Module 5</span><span class="badge">Resilience</span></div>
+            <h3>Cloud, Scalability & Operational Resilience</h3>
+            <p class="muted">Prepares leaders for volatile claims loads and reliability expectations during critical events.</p>
+            <div class="actions"><a class="text-link" href="modules/module-5.html">Open module</a><span class="muted">Simulation</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="risk"
+            data-search="module 6 security privacy regulatory risk gdpr cybersecurity vendor risk auditability"
+          >
+            <div class="module-meta"><span class="badge">Module 6</span><span class="badge">Risk</span></div>
+            <h3>Security, Privacy & Regulatory Risk</h3>
+            <p class="muted">Strengthens executive ownership for cyber risk, compliance controls, and ecosystem exposure.</p>
+            <div class="actions"><a class="text-link" href="modules/module-6.html">Open module</a><span class="muted">Governance</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="leadership"
+            data-search="module 7 operating model product cross functional collaboration governance innovation"
+          >
+            <div class="module-meta"><span class="badge">Module 7</span><span class="badge">Leadership</span></div>
+            <h3>Operating Model, Product & Cross-Functional Collaboration</h3>
+            <p class="muted">Improves alignment and delivery decisions across leadership, product, engineering, and operations.</p>
+            <div class="actions"><a class="text-link" href="modules/module-7.html">Open module</a><span class="muted">Leadership</span></div>
+          </article>
+
+          <article
+            class="card module-card"
+            data-module-card
+            data-track="leadership"
+            data-search="module 8 agile organizations modern product development governance prioritization customization platform"
+          >
+            <div class="module-meta"><span class="badge">Module 8</span><span class="badge">Leadership</span></div>
+            <h3>Agile Organizations & Modern Product Development</h3>
+            <p class="muted">Explains how organization design, roadmap governance, and product operating models drive scalable claims platforms.</p>
+            <div class="actions"><a class="text-link" href="modules/module-8.html">Open module</a><span class="muted">Leadership</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card callout-panel" aria-labelledby="resource-title" data-reveal>
+        <h2 id="resource-title">Blended Learning Resources</h2>
+        <p class="muted">
+          The curriculum mixes trusted LinkedIn Learning paths with practical Udemy topic tracks for flexible, self-paced reinforcement.
+        </p>
+        <div class="link-list">
+          <a href="https://www.linkedin.com/learning/topics/digital-transformation" target="_blank" rel="noopener noreferrer">LinkedIn Learning: Digital Transformation</a>
+          <a href="https://www.linkedin.com/learning/topics/product-management" target="_blank" rel="noopener noreferrer">LinkedIn Learning: Product Management</a>
+          <a href="https://www.udemy.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Udemy Topic Track: Artificial Intelligence</a>
+          <a href="https://www.udemy.com/topic/cyber-security/" target="_blank" rel="noopener noreferrer">Udemy Topic Track: Cybersecurity</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Need a private cohort structure? <a href="mailto:executive.training@claimsacademy.com">Contact the program team</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
