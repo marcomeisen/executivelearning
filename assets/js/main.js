@@ -1,7 +1,33 @@
 (function () {
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navMenu = document.querySelector("[data-nav-menu]");
+  const mainContent = document.querySelector("#main-content");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function isModuleDetailPage() {
+    return window.location.pathname.includes("/modules/");
+  }
+
+  function pathPrefix() {
+    return isModuleDetailPage() ? "../" : "";
+  }
+
+  if (mainContent && !mainContent.querySelector(".top-utility")) {
+    const utilityBar = document.createElement("section");
+    utilityBar.className = "top-utility";
+    utilityBar.setAttribute("aria-label", "Learning dashboard utility bar");
+
+    utilityBar.innerHTML = [
+      '<div class="utility-title">Executive learning dashboard</div>',
+      '<div class="utility-links">',
+      '<a class="utility-chip" href="' + pathPrefix() + 'modules.html">Module catalog</a>',
+      '<a class="utility-chip" href="' + pathPrefix() + 'pathways.html">Pathways</a>',
+      '<a class="utility-chip" href="' + pathPrefix() + 'faq.html">FAQs</a>',
+      "</div>",
+    ].join("");
+
+    mainContent.prepend(utilityBar);
+  }
 
   if (navToggle && navMenu) {
     function setMenuState(isOpen) {
@@ -21,6 +47,12 @@
           setMenuState(false);
         }
       });
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 760) {
+        setMenuState(false);
+      }
     });
   }
 

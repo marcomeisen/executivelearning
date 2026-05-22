@@ -7,6 +7,157 @@ Transform the Executive Claims Technology Academy website from a marketing/sales
 
 ---
 
+## Clean UI Direction (Screenshot-Inspired)
+
+### 1) Visual Principles
+- Keep IA and content structure intact; reduce visual noise via lighter surfaces, softer borders, and fewer competing accents.
+- Prefer "dashboard calm": neutral backgrounds, white cards, restrained shadows, short headings, generous spacing.
+- Maintain executive tone, but simplify hierarchy so each section has one primary action and one scanning pattern.
+
+### 2) Design Tokens (Implementation Values)
+Apply these in shared CSS (`:root`) and migrate existing styles to token usage.
+
+```css
+:root {
+   /* Neutrals */
+   --bg-canvas: #f5f7fa;
+   --bg-subtle: #eef2f6;
+   --surface: #ffffff;
+   --surface-muted: #f8fafc;
+   --border-soft: #e5e9f0;
+   --border-strong: #d7dee8;
+
+   /* Text */
+   --text-strong: #0f172a;
+   --text-body: #334155;
+   --text-muted: #64748b;
+
+   /* Brand accents (restrained) */
+   --accent: #0f6cbd;
+   --accent-hover: #0b5fa6;
+   --accent-soft: #e9f2fb;
+   --success-soft: #e8f7ef;
+   --warning-soft: #fff4e8;
+
+   /* Radius */
+   --radius-sm: 8px;
+   --radius-md: 12px;
+   --radius-lg: 16px;
+   --radius-pill: 999px;
+
+   /* Shadows (calm) */
+   --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.06);
+   --shadow-2: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+   /* Spacing (8px system) */
+   --space-1: 0.5rem;
+   --space-2: 0.75rem;
+   --space-3: 1rem;
+   --space-4: 1.5rem;
+   --space-5: 2rem;
+   --space-6: 3rem;
+
+   /* Type scale */
+   --fs-300: 0.875rem;
+   --fs-400: 1rem;
+   --fs-500: 1.125rem;
+   --fs-600: 1.25rem;
+   --fs-700: clamp(1.5rem, 2vw, 1.875rem);
+   --fs-800: clamp(1.875rem, 3vw, 2.25rem);
+
+   /* Layout */
+   --container-max: 1120px;
+}
+```
+
+Typography recommendation:
+- Keep `IBM Plex Sans` for body copy.
+- Use one display face only for headings (existing `Sora` is acceptable).
+- Reduce heading weight/size contrast by one step versus current implementation.
+
+### 3) Component Treatment Rules
+
+#### Header / Nav
+- Use flat light header (`--surface`) with a single bottom border (`--border-soft`), remove heavy blur and glow.
+- Nav links default to `--text-body`; active state uses `--text-strong` + 2px underline in `--accent`.
+- Mobile menu panel should be full-width surface card with 12px radius and no large drop shadow.
+
+#### Hero / Page Intro
+- Remove high-saturation gradient hero backgrounds.
+- Use surface block: white or `--surface-muted`, border `1px solid var(--border-soft)`, `--radius-lg`, shadow `--shadow-1`.
+- Keep one primary CTA and one secondary CTA max.
+- Stats chips should be low-contrast pills (`--surface-muted`, subtle border), not glossy badges.
+
+#### Cards (module cards, pathway cards, callouts)
+- Base card: white background, `1px` border soft, `--radius-md`, `--shadow-1`.
+- Hover: translateY(-2px), shadow upgrade to `--shadow-2`, no color glow.
+- Card title max 2 lines, description max 3 lines for consistent scan rhythm.
+
+#### Badges / Metadata
+- Badge style: small pill, 12-14px text, semibold, muted background.
+- Use semantic variants only:
+   - Info/default: `--accent-soft` + `--accent`
+   - Success: `--success-soft` + darker green text
+   - Warning/advanced: `--warning-soft` + darker amber text
+
+#### Controls (search, select, buttons)
+- Inputs/selects: height 44px, white background, `1px solid var(--border-strong)`, focus ring `0 0 0 3px rgba(15,108,189,.2)`.
+- Primary button: solid accent, min-height 44px, radius 10-12px.
+- Secondary button: white background, soft border, darker text.
+- Ensure full-width controls on mobile.
+
+#### Sections
+- Alternate section backgrounds only between `--bg-canvas` and `--surface-muted`; avoid decorative gradients.
+- Vertical rhythm: section padding `var(--space-5)` desktop, `var(--space-4)` mobile.
+- Limit each section to one title + one supporting sentence before content grid.
+
+### 4) Motion Minimalism
+- Duration range: 120-220ms for hover/focus; 260-320ms for reveal.
+- Easing: `cubic-bezier(0.2, 0.8, 0.2, 1)`.
+- Only keep:
+   - card hover lift,
+   - button press/hover,
+   - one-time reveal on section entry.
+- Remove parallax, large transforms, persistent floating animations.
+- Respect reduced motion:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+   * { animation: none !important; transition: none !important; }
+}
+```
+
+### 5) Accessibility + Responsive Guardrails
+- Contrast targets: normal text >= 4.5:1, large text >= 3:1, controls/borders >= 3:1.
+- Keep visible focus on all interactive controls (do not remove outlines).
+- Minimum touch target: 44x44px.
+- Use fluid type and grid collapse:
+   - Desktop: 3/2-column cards
+   - Tablet: 2-column
+   - Mobile (<768px): 1-column
+- Prevent long lines: content max width around 68-72ch for text-heavy blocks.
+
+### 6) Minimal HTML Hook Plan (No IA Rewrite)
+Use small class hooks and avoid structural changes.
+
+- Add `clean-ui` class on `<body>` to scope rollout safely.
+- Add utility classes where needed:
+   - `.surface-card` (all card-like containers)
+   - `.meta-badge` (all badge chips)
+   - `.section-intro` (heading + supporting text wrapper)
+   - `.control-row` (search/filter wrapper)
+- Keep existing semantic tags and content order.
+
+### 7) Coder Handoff Sequence (Low Risk)
+1. Replace global tokens in shared CSS.
+2. Normalize header + hero surfaces and remove heavy gradients/shadows.
+3. Standardize cards/badges/controls using the utility hooks above.
+4. Tune spacing and typography scale across index/modules/pathways/faq.
+5. Run accessibility pass (focus states, contrast, mobile tap targets).
+6. Verify consistency on module detail pages with the same card/control primitives.
+
+---
+
 ## 1. Hero / Entry-Point Redesign
 
 ### Current State

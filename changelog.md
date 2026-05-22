@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-05-22
+
+- **Nav watermark line-break fix:** Corrected CSS content escape for the FAQ watermark so it renders cleanly on two lines: "For Samer" and "from Marco".
+
+- **Nav spacing + watermark formatting:** Increased spacing between nav entries and updated the FAQ watermark to two lines (line break after "Samer") with centered alignment for desktop and mobile.
+
+- **Nav watermark label:** Added a shared sidebar/mobile-nav watermark under FAQ via `assets/css/styles.css` with exact text "For Samer from Marco" using subtle muted styling across all pages without changing nav links or behavior.
+
+- **Platform rename across all pages:** Updated platform branding from "Executive Claims Technology Academy" to "Samer's Technology Academy" across all HTML page-level brand locations (titles, header brand text, and header aria labels).
+
+- **Dashboard app-shell redesign:** Reworked the shared UI/UX into a cleaner learning dashboard style with a desktop left navigation rail, mobile hamburger collapse behavior, injected top utility bar, softer neutral card surfaces, modern spacing rhythm, and preserved module filter/search, FAQ accordion, reveal motion, and route/link behavior across all pages.
+
+- **Mailto target standardization:** Updated all HTML `mailto:` link targets to `marco.meisen@verisk.com` while preserving link text and surrounding page content.
+
+- **Module card heading spacing fix:** Added shared card content-flow spacing in `assets/css/styles.css` so secondary headings like "Why It Matters" no longer appear cramped after lists/paragraphs, while preserving correct top-of-card heading alignment and improving module card rhythm.
+
+- **Clean UI refresh (screenshot-inspired):** Updated shared styles for a lighter, cleaner dashboard-like experience with calmer surfaces, reduced gradient intensity, softer borders/shadows, tighter motion timing, improved visual rhythm, and preserved accessibility/reduced-motion behavior across core pages and module detail layouts.
+
+- **Home markup integrity fix:** Repaired malformed HTML in `index.html` value/outcomes cards to restore valid structure and consistent rendering without changing information architecture.
+
+- **Visual direction refresh spec:** Added a concise, implementation-ready "Clean UI Direction (Screenshot-Inspired)" section to `UX_TRANSFORMATION_SPEC.md` with concrete design tokens, component treatment rules, motion limits, accessibility guardrails, mobile behavior, and low-risk rollout steps for shared CSS + minimal HTML hooks.
+
+- **Resources UI standardization:** Updated Modules 1-9 self-learning sections to consistent provider-group layout with required order (LinkedIn Learning, YouTube, Udemy), including lightweight provider icons and accessible grouped headings.
+
+- **Module 9 content replacement:** Replaced `modules/module-9.html` content using the TrainingConcept Module 9 topic, now focused on "Agentic AI & Autonomous Claims Operations" with updated executive framing, workshop, and self-learning resources.
+- **Module 9 launch:** Added new module page `modules/module-9.html` for "Value Realization, KPIs & Executive Decision Metrics" with learning goals, executive value workshop simulation, and curated self-learning resources.
+- **Site-wide module count update:** Updated homepage and catalog copy from 8 to 9 modules, including hero text and module stat highlights.
+- **Navigation and pathways wiring:** Added Module 9 card to the modules catalog (search/filter enabled with `data-track="strategy"`), added Module 9 as a suggested step across all learning pathways, and updated Module 8 footer progression to point to Module 9.
+
+- **Global UI hint position:** Repositioned the shared hint text "For Samer from Marco" from bottom-right to bottom-center on all pages.
+- **Global UI hint:** Added a subtle, non-interactive bottom-right hint on all pages via shared stylesheet text: "For Samer from Marco".
+- **Global UI hint visibility:** Increased the shared hint text visibility (slightly larger size, higher opacity, and a soft readability treatment) while keeping it subtle and non-interactive.
+- **Module resources:** Standardized software architecture references across Modules 1-8 to use: https://www.youtube.com/watch?v=8UlLgOf20Ho.
+- **Module 8 resources:** Removed two self-learning YouTube links from Module 8: "Stanford eCorner - Leadership & Innovation" and "McKinsey - Agile Organizations".
+
 ## 2026-05-21
 
 - **Global header navigation:** Removed the "Start Learning" button from all page headers so navigation is consistent and content-first across the site.
