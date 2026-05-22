@@ -2,6 +2,10 @@
 
 ## 2026-05-22
 
+- **Global spacing refinement:** Reduced section vertical gaps and improved card content rhythm (especially around H3 blocks/lists and notes) to fix cramped/uneven spacing in module pages.
+
+- **Module 2 enrichment (expanded concept alignment):** Updated `modules/module-2.html` with missing executive content from New Module 2 in `TrainingConcept.md`, including platform definition, software-vs-platform framing, architecture model trade-offs, ecosystem/orchestration and customization-vs-scalability emphasis, grouped key executive questions, and expanded curated resources while preserving provider order (LinkedIn Learning -> YouTube -> Udemy).
+
 - **Nav watermark line-break fix:** Corrected CSS content escape for the FAQ watermark so it renders cleanly on two lines: "For Samer" and "from Marco".
 
 - **Nav spacing + watermark formatting:** Increased spacing between nav entries and updated the FAQ watermark to two lines (line break after "Samer") with centered alignment for desktop and mobile.
